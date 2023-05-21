@@ -1,0 +1,22 @@
+@import url('fa.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.wrapper, .footer {
+    opacity: 0;
+}
+
+.spin {
+    animation: 2s linear infinite rotation;
+}
+
+@keyframes rotation {
+    0%{ transform:rotate(0);}
+    100%{ transform:rotate(360deg); }
+}

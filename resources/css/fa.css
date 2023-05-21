@@ -1,0 +1,111 @@
+/* Font Awesomeの設定 */
+
+.status #posts:before {
+    content: "\f304";
+    font-family: "Font Awesome 5 Free";
+    margin-right: 0.5rem;
+}
+
+.status #corrects:before {
+    content: "\f058";
+    font-family: "Font Awesome 5 Free";
+    margin-right: 0.5rem;
+}
+
+.status #top:before {
+    content: "\f521";
+    font-family: "Font Awesome 5 Free";
+    margin-right: 0.5rem;
+}
+
+.status #icon:before {
+    content: "\f03e";
+    font-family: "Font Awesome 5 Free";
+    margin-right: 0.2rem;
+}
+
+.label #deadline:before {
+    content: "\f073";
+    font-family: "Font Awesome 5 Free";
+    margin-right: 0.5rem;
+}
+
+.label #title:before, .label #answer:before, .label #explanation:before {
+    content: "\f304";
+    font-family: "Font Awesome 5 Free";
+    margin-right: 0.5rem;
+}
+
+.label #file:before {
+    content: "\f03e";
+    font-family: "Font Awesome 5 Free";
+    margin-right: 0.5rem;
+}
+
+.card-actions #create:before {
+    content: "\f304";
+    font-family: "Font Awesome 5 Free";
+    margin-right: 0.1rem;
+}
+
+.card-actions #bookmark:before {
+    content: "\f02e";
+    font-family: "Font Awesome 5 Free";
+    margin-right: 0.2rem;
+}
+
+.card-actions #deadline:before {
+    content: "\f073";
+    font-family: "Font Awesome 5 Free";
+    margin-right: 0.1rem;
+}
+
+.status-badge .check:before {
+    content: "\f058";
+    font-family: "Font Awesome 5 Free";
+    margin-right: 0.3rem;
+}
+
+.status-badge #create:before {
+    content: "\f304";
+    font-family: "Font Awesome 5 Free";
+    margin-right: 0.1rem;
+}
+
+#archive:before {
+    content: "\f187";
+    font-family: "Font Awesome 5 Free";
+    font-size: 1.2rem;
+    margin-right: 0.3rem;
+}
+
+#show:before {
+    content: "\f1da";
+    font-family: "Font Awesome 5 Free";
+    font-size: 1.2rem;
+    margin-right: 0.3rem;
+}
+
+.quiz-answer-modal:before {
+    content: "\f0eb";
+    font-family: "Font Awesome 5 Free";
+    font-size: 1.2rem;
+}
+
+.delete-confirm-modal:before {
+    content: "\f071";
+    font-family: "Font Awesome 5 Free";
+    font-size: 1.2rem;
+}
+
+.modal-close:before {
+    content: "\f00d";
+    font-family: "Font Awesome 5 Free";
+    margin-right: 0.3rem;
+}
+
+.err-mes:before {
+    content: "\f071";
+    font-family: "Font Awesome 5 Free";
+    margin-right: 0.2rem;
+}
