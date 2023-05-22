@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('Quizzes', function (Blueprint $table) {
+        Schema::table('quizzes', function (Blueprint $table) {
             $table->string('image_name')->after('deadline')->nullable();
             $table->string('image_path')->after('image_name')->nullable(); //
         });
@@ -22,7 +22,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('Quizzes', function (Blueprint $table) {
+        Schema::table('quizzes', function (Blueprint $table) {
             //
         });
     }
