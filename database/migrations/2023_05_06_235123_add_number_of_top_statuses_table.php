@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('Statuses', function (Blueprint $table) {
+        Schema::table('statuses', function (Blueprint $table) {
             $table->integer('number_of_top')->after('number_of_corrects')->default(0); //
         });
     }
@@ -21,7 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('Statuses', function (Blueprint $table) {
+        Schema::table('statuses', function (Blueprint $table) {
             $table->dropColumn('number_of_top'); //
         });
     }
