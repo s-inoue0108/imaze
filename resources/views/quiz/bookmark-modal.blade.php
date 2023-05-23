@@ -1,5 +1,5 @@
 @foreach ($bookmarks as $bookmark)
-<div class="quiz-modal opacity-0">
+<div class="quiz-modal">
     <!--画像の全画面表示-->
     <input type="checkbox" id="image-modal-{{ $bookmark->quiz->id }}" class="modal-toggle" />
     <label for="image-modal-{{ $bookmark->quiz->id }}" class="modal cursor-pointer">
