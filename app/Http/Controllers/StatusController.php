@@ -59,10 +59,13 @@ class StatusController extends Controller
 
     public function bookmarks()
     {
+        // Carbonインスタンス（現在時刻）
+        $now = new Carbon();
+        
         // ブックマークされた投稿を取得
         $bookmarks = Bookmark::with(['quiz', 'quiz.corrects'])->where('user_id', Auth::id())->latest()->paginate(12);
 
-        return view('quiz/bookmarks', compact('bookmarks')); //
+        return view('quiz/bookmarks', compact('bookmarks', 'now')); //
     }
 
     public function ranking(Request $request)
