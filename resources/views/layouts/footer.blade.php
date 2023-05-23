@@ -18,7 +18,7 @@
     <div class="grid-flow-col gap-8 items-center justify-self-center sm:justify-self-end">
         <a href="https://twitter.com/Rebel_in_math" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-2xl fa-twitter"></i></a> 
         <a href="https://www.youtube.com/channel/UCpW3S0yT0SSrUhz76Xmf8Hg" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-2xl fa-youtube"></i></a>
-        <a href="http://si-library.net" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-2xl fa-paperclip"></i></a>
+        <a href="https://si-library.net" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-2xl fa-paperclip"></i></a>
         <a href="https://sv-evolve-lab.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-2xl fa-wordpress"></i></a>
     </div>
 </footer>
