@@ -4,7 +4,7 @@ $(function() {
         /*
         $('.wrapper, .footer').animate({ opacity: 1 }, { duration: 500, easing: 'swing'});
         */
-        $('.quiz-modal').removeClass('opacity-0');
+        $('.quiz-modal').css('opacity', '1');
     });
 });
 
