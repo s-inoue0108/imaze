@@ -79,7 +79,7 @@
                                             <label for="delete-confirm-modal-{{ $bookmark->quiz->id }}" class="btn btn-circle btn-error text-white ml-4"><i class="fa-solid fa-lg fa-trash-can"></i></label>
                                         </div>
                                     @elseif ($bookmark->quiz->user->id != Auth::id())
-                                        @if ($bookmark->quiz->automaticity === 'true' || $bookmark->quiz->corrects->where('user_id', Auth::id()) != '[]')
+                                        @if ($bookmark->quiz->automaticity === 'true' || $bookmark->quiz->corrects->where('user_id', Auth::id()) != '[]' || $bookmark->quiz->deadline > $now)
                                             <div class="flex justify-center items-center px-8">
                                                 <label for="quiz-modal-{{ $bookmark->quiz->id }}" class="btn btn-primary w-full max-w-xs">解説を見る</label>
                                             </div>
