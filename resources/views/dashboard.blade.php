@@ -124,8 +124,8 @@
             <div class="flex justify-center">
                 <div class="flex flex-col gap-4">
                     <div class="flex flex-col gap-1">
-                        <label class="text-xs"><i class="fa-solid fa-circle-check mr-1"></i>管理人が1円で運営してるサイト</label>
-                        <a href="http://si-library.net" target="_blank" rel="noopener noreferrer">
+                        <label class="text-xs"><i class="fa-solid fa-circle-check mr-1"></i>管理人のWebサイト</label>
+                        <a href="https://si-library.net" target="_blank" rel="noopener noreferrer">
                             <button class="btn btn-primary btn-wide"><i class="fa-solid fa-paperclip mr-2"></i>S.I's Library</button>
                         </a>
                     </div>
