@@ -1,3 +1,4 @@
+/*
 // フェードイン
 $(function() {
     $(window).on('load', function() { 
@@ -5,6 +6,7 @@ $(function() {
         $('.quiz-modal').removeClass('opacity-0');
     });
 });
+*/
 
 // フェードイン/アウト
 $(function() {
