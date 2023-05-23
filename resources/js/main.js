@@ -1,12 +1,13 @@
 // フェードイン
+
+/*
 $(function() {
     $(window).on('load', function() { 
-        /*
         $('.wrapper, .footer').animate({ opacity: 1 }, { duration: 500, easing: 'swing'});
-        */
         $('.quiz-modal').css('opacity', '1');
     });
 });
+*/
 
 // フェードイン/アウト
 $(function() {
