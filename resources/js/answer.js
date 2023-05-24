@@ -80,7 +80,7 @@ $(function() {
                             }, 5000);
 
                              // 正解済みバッジと解説を表示
-                             $('#quiz_' + json.quiz_id).find('.status-badge').html('<div class="badge badge-secondry lg:badge-lg check">正答済み</div>');
+                             $('#quiz_' + json.quiz_id).find('.status-badge').html('<div class="badge badge-secondary lg:badge-lg check">正答済み</div>');
                              $('#quiz_' + json.quiz_id).find('.answer-section').html('<div class="flex justify-center items-center px-8"><label for="quiz-modal-' + quiz_id + '" class="btn btn-primary w-full max-w-xs">解説を見る</label></div>');
 
                         }else if (json.message === 'このクイズへの解答は締め切られています') {
