@@ -51,8 +51,9 @@
                                         <label for="delete-confirm-modal-{{ $quiz->id }}" class="btn btn-circle btn-error text-white ml-4"><i class="fa-solid fa-lg fa-trash-can"></i></label>
                                     </div>
                                 </div>
+                                <p class="text-center text-xs text-gray-600 p-1"><i class="fa-solid fa-flag-checkered mr-1"></i>{{ $quiz->corrects->count() }}人/{{ $user_counts }}人が正解しました</p>
     
-                                <div class="border-2 border-yellow-100 rounded mt-2"></div>
+                                <div class="border-2 border-yellow-100 rounded"></div>
     
                                 <div class="card-actions justify-between items-center mt-2">
                                     <div class="bookmark-state">
