@@ -96,7 +96,7 @@
                                     </div>
                                 </div>
                                 @if ($quiz->automaticity !== 'true')
-                                    <p class="text-center text-xs text-gray-600 p-1"><i class="fa-solid fa-flag-checkered mr-1"></i>{{ $quiz->corrects->count() }}人/{{ $all_users }}人が正解しました</p>
+                                    <p class="text-center text-xs text-gray-600 p-1"><i class="fa-solid fa-flag-checkered mr-1"></i>{{ $quiz->corrects->count() - 1 }}人/{{ $all_users }}人が正解しました</p>
                                 @endif
     
                                 <div class="border-2 border-yellow-100 rounded"></div>
