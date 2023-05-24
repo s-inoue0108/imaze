@@ -6,7 +6,7 @@
             </a>
             <div class="flex flex-col lg:flex-row ml-4 font-semibold">
                 <p>Copyright &copy; <?php echo date('Y'); ?></p>
-                <p class="lg:ml-2"><a href="http://si-library.net" target="_blank" rel="noopener noreferrer" class="link link-hover">S.Inoue</a>
+                <p class="lg:ml-2"><a href="https://si-library.net" target="_blank" rel="noopener noreferrer" class="link link-hover">S.Inoue</a>
                 <span class="ml-2">All rights reserved.</span></p>
             </div>
         </div>
