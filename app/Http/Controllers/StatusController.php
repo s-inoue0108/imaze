@@ -53,8 +53,11 @@ class StatusController extends Controller
     {
         // 自分の投稿（自動投稿除く）を取得
         $quizzes = Quiz::with('user.status')->where('user_id', Auth::id())->whereNull('automaticity')->latest()->paginate(12);
+        
+        // 全ユーザー数
+        $user_counts = User::count();
 
-        return view('quiz/myposts', compact('quizzes')); //
+        return view('quiz/myposts', compact('quizzes', 'user_counts')); //
     }
 
     public function bookmarks()
@@ -62,10 +65,13 @@ class StatusController extends Controller
         // Carbonインスタンス（現在時刻）
         $now = new Carbon();
         
+        // 全ユーザー数
+        $user_counts = User::count();
+        
         // ブックマークされた投稿を取得
         $bookmarks = Bookmark::with(['quiz', 'quiz.corrects'])->where('user_id', Auth::id())->latest()->paginate(12);
 
-        return view('quiz/bookmarks', compact('bookmarks', 'now')); //
+        return view('quiz/bookmarks', compact('bookmarks', 'now', 'user_counts')); //
     }
 
     public function ranking(Request $request)
