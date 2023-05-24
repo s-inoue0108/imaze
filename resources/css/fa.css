@@ -45,19 +45,17 @@
 .card-actions #create:before {
     content: "\f304";
     font-family: "Font Awesome 5 Free";
-    margin-right: 0.1rem;
 }
 
 .card-actions #bookmark:before {
     content: "\f02e";
     font-family: "Font Awesome 5 Free";
-    margin-right: 0.2rem;
+    margin-right: 0.1rem;
 }
 
 .card-actions #deadline:before {
     content: "\f073";
     font-family: "Font Awesome 5 Free";
-    margin-right: 0.1rem;
 }
 
 .status-badge .check:before {
