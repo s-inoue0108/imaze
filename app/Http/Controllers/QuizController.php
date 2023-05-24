@@ -30,11 +30,14 @@ class QuizController extends Controller
     {
         // Carbonインスタンス（現在時刻）
         $now = new Carbon();
+        
+        // 全ユーザー数
+        $user_counts = User::count();
 
         // 掲出期限内の投稿を取得
         $quizzes = Quiz::with(['user.status', 'corrects', 'bookmarks'])->where('deadline', '>=', $now)->latest()->paginate(12);
 
-        return view('quiz.index', compact('quizzes', 'now')); //
+        return view('quiz.index', compact('quizzes', 'now', 'user_counts')); //
     }
 
     /**
