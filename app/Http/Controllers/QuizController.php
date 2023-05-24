@@ -32,7 +32,7 @@ class QuizController extends Controller
         $now = new Carbon();
         
         // 全ユーザー数
-        $user_counts = User::count();
+        $user_counts = User::count() - 1;
 
         // 掲出期限内の投稿を取得
         $quizzes = Quiz::with(['user.status', 'corrects', 'bookmarks'])->where('deadline', '>=', $now)->latest()->paginate(12);
