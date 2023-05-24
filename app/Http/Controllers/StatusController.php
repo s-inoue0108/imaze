@@ -55,7 +55,7 @@ class StatusController extends Controller
         $quizzes = Quiz::with('user.status')->where('user_id', Auth::id())->whereNull('automaticity')->latest()->paginate(12);
         
         // 全ユーザー数
-        $user_counts = User::count();
+        $user_counts = User::count() - 1;
 
         return view('quiz/myposts', compact('quizzes', 'user_counts')); //
     }
@@ -66,7 +66,7 @@ class StatusController extends Controller
         $now = new Carbon();
         
         // 全ユーザー数
-        $user_counts = User::count();
+        $user_counts = User::count() - 1;
         
         // ブックマークされた投稿を取得
         $bookmarks = Bookmark::with(['quiz', 'quiz.corrects'])->where('user_id', Auth::id())->latest()->paginate(12);
