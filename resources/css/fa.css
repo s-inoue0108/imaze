@@ -30,7 +30,7 @@
     margin-right: 0.5rem;
 }
 
-.label #title:before, .label #answer:before, .label #explanation:before {
+.label #title:before, .label #answer:before, .label #explanation:before, .label #hint:before {
     content: "\f304";
     font-family: "Font Awesome 5 Free";
     margin-right: 0.5rem;
@@ -85,6 +85,12 @@
 }
 
 .quiz-answer-modal:before {
+    content: "\f058";
+    font-family: "Font Awesome 5 Free";
+    font-size: 1.2rem;
+}
+
+.quiz-hint-modal:before {
     content: "\f0eb";
     font-family: "Font Awesome 5 Free";
     font-size: 1.2rem;

@@ -18,7 +18,7 @@
         <input type="checkbox" id="quiz-modal-{{ $quiz->id }}" class="modal-toggle" />
         <label for="quiz-modal-{{ $quiz->id }}" class="modal cursor-pointer">
             <label class="modal-box relative bg-yellow-400" for="">
-                <h3 class="text-black text-center text-lg font-bold quiz-answer-modal">「{{ $quiz->title }}」</h3>
+                <h3 class="text-black text-center text-lg font-bold quiz-answer-modal">「{{ $quiz->title }}」の解説</h3>
                 <div class="border-2 border-yellow-100 rounded mt-2"></div>
                 <p class="text-lg text-center text-black font-semibold underline underline-offset-8 pt-4">答え：{{ $quiz->answer }}</p>
                 @if ($quiz->explanation === null)
@@ -27,6 +27,26 @@
                 <p class="text-black py-8">{{ $quiz->explanation }}</p>
                 @endif
                 <p class="text-xs text-gray-400 flex justify-center items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-4 h-4 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    画面外をタップして閉じる
+                </p>
+            </label>
+        </label>
+    </div>
+
+    <!--ヒント-->
+    <div>
+        <input type="checkbox" id="hint-modal-{{ $quiz->id }}" class="modal-toggle" />
+        <label for="hint-modal-{{ $quiz->id }}" class="modal cursor-pointer">
+            <label class="modal-box relative bg-accent" for="">
+                <h3 class="text-white text-center text-lg font-bold quiz-hint-modal">「{{ $quiz->title }}」のヒント</h3>
+                <div class="border-2 border-gray-600 rounded mt-2"></div>
+                @if ($quiz->hint === null)
+                <p class="text-white text-center py-8">このクイズにはヒントがありません</p>
+                @else
+                <p class="text-white py-8">{{ $quiz->hint }}</p>
+                @endif
+                <p class="text-xs text-gray-600 flex justify-center items-center gap-1">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-4 h-4 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                     画面外をタップして閉じる
                 </p>

@@ -33,6 +33,26 @@
             </label>
         </label>
     </div>
+
+    <!--ヒント-->
+    <div>
+        <input type="checkbox" id="hint-modal-{{ $bookmark->quiz->id }}" class="modal-toggle" />
+        <label for="hint-modal-{{ $bookmark->quiz->id }}" class="modal cursor-pointer">
+            <label class="modal-box relative bg-accent" for="">
+                <h3 class="text-white text-center text-lg font-bold quiz-hint-modal">「{{ $bookmark->quiz->title }}」のヒント</h3>
+                <div class="border-2 border-gray-600 rounded mt-2"></div>
+                @if ($bookmark->quiz->hint === null)
+                <p class="text-white text-center py-8">このクイズにはヒントがありません</p>
+                @else
+                <p class="text-white py-8">{{ $bookmark->quiz->hint }}</p>
+                @endif
+                <p class="text-xs text-gray-600 flex justify-center items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-4 h-4 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    画面外をタップして閉じる
+                </p>
+            </label>
+        </label>
+    </div>
     
     <!--削除の確認-->
     <div>

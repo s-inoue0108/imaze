@@ -47,16 +47,16 @@
                         </div>
                         <div class="status-badge">
                             @if ($bookmark->quiz->corrects->where('user_id', Auth::id()) != '[]')
-                                <div class="badge badge-secondary lg:badge-lg check">
+                                <div class="text-white badge badge-secondary lg:badge-lg check">
                                     正答済み
                                 </div>
                             @endif
                             @if ($bookmark->quiz->automaticity === 'true')
-                                <div class="badge badge-accent lg:badge-lg check">
+                                <div class="text-white badge badge-accent lg:badge-lg check">
                                     自動生成
                                 </div>
                             @elseif ($bookmark->quiz->user->id == Auth::id())
-                                <div class="badge badge-accent lg:badge-lg check">
+                                <div class="text-white badge badge-accent lg:badge-lg check">
                                     あなたの投稿
                                 </div>
                             @endif
@@ -85,6 +85,7 @@
                                             </div>
                                         @else
                                             <div class="flex justify-center items-center">
+                                                <label for="hint-modal-{{ $bookmark->quiz->id }}" class="btn btn-circle btn-accent text-white mr-4"><i class="fa-solid fa-lg fa-lightbulb"></i></label>
                                                 <input type="text" name="solution" placeholder="解答を入力" class="input input-bordered input-primary w-full max-w-xs" />
                                                 <button class="btn btn-primary btn_solution ml-2">解答する</button>
                                             </div>

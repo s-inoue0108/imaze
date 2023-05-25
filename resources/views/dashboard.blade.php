@@ -13,12 +13,16 @@
             <a href="#"><button class="btn btn-circle"><i class="fa-solid fa-chevron-up"></i></button></a>
         </div>
         
-    <x-headline>おしらせ</x-headline>
+    <x-headline>管理者からのおしらせ</x-headline>
         
     <div class="pt-6 px-6 flex justify-center">
         <div class="bg-yellow-400 rounded-3xl">
-            <p class="text-gray-700 p-2"><span class="font-bold">不具合のお詫び：</span>
-            ランキングに関する不具合があったため，2023-05-25 11:20ごろ以前のステータスパラメータをリセットしました．すみません．反省してまーす．</p>
+            <p class="text-sm text-gray-700 p-3"><span class="font-bold">不具合のお詫び：</span>
+                ランキングに関する不具合があったため，2023-05-25 11:20ごろ以前のステータスパラメータをリセットしました．すみません．反省してまーす．
+            </p>
+            <p class="text-sm text-gray-700 p-3"><span class="font-bold">新機能追加のおしらせ：</span>
+                投稿フォームにて，クイズの「ヒント」を設定できる機能を追加しました．まだ正解していないクイズではヒントを参照できるようになりました．
+            </p>
         </div>
     </div>
 

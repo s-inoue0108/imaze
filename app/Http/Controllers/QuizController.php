@@ -63,17 +63,19 @@ class QuizController extends Controller
         $user_id = Auth::id();
         $quiz->user_id = $user_id;
 
-        // タイトル，答え，説明のバリデーション配列を作成
+        // タイトル，答え，解説，ヒントのバリデーション配列を作成
         $validated = $request->validate([
             'title' => 'required|max:20',
             'answer' => 'required|max:20',
             'explanation' => 'max:200',
+            'hint' => 'max:100',
         ]);
 
         // タイトル，答え，説明をQuizzesテーブルへ保存
         $quiz->title = $validated['title'];
         $quiz->answer = $validated['answer'];
         $quiz->explanation = $validated['explanation'];
+        $quiz->hint = $validated['hint'];
 
         // クイズの掲出期限をQuizzesテーブルへ保存
         if ($request->deadline === 'one_day') {

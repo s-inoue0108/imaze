@@ -245,6 +245,7 @@ return [
         'title' => 'タイトル',
         'answer' => '解答',
         'explanation' => '解説',
+        'hint' => 'ヒント',
         'updated_at' => '更新日',
         'username' => 'ユーザー名',
         'year' => '年',

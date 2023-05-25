@@ -130,7 +130,7 @@
                     <div class="flex justify-center mt-2">
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
-                                <span class="label-text text-gray-600 font-bold" id="title">解答</span>
+                                <span class="label-text text-gray-600 font-bold" id="answer">解答</span>
                             </label>
                             <input type="text" name="answer" placeholder="ANSWER" class="input input-bordered input-primary w-full max-w-xs" />
                             <div class="flex flex-col items-center gap-2 mt-2 text-xs text-red-400 font-bold">
@@ -156,6 +156,26 @@
                             <div class="flex flex-col items-center gap-2 mt-2 text-xs text-red-400 font-bold">
                                 @if ($errors->has('explanation'))
                                     @foreach ($errors->get('explanation') as $error)
+                                        <p class="err-mes">
+                                            {{ $error }}
+                                        </p>
+                                    @endforeach
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-2 border-yellow-100 rounded mt-4"></div>
+    
+                    <div class="flex justify-center mt-2">
+                        <div class="form-control w-full max-w-xs">
+                            <label class="label">
+                                <span class="label-text text-gray-600 font-bold" id="hint">ヒント（任意）</span>
+                            </label>
+                            <textarea rows="3" name="hint" class="textarea textarea-primary w-full max-w-xs" placeholder="HINT"></textarea>
+                            <div class="flex flex-col items-center gap-2 mt-2 text-xs text-red-400 font-bold">
+                                @if ($errors->has('explanation'))
+                                    @foreach ($errors->get('hint') as $error)
                                         <p class="err-mes">
                                             {{ $error }}
                                         </p>
