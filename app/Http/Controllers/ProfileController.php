@@ -55,7 +55,7 @@ class ProfileController extends Controller
         $user_id = Auth::id();
 
         // Statusesテーブルから該当の行と，画像データを削除
-        $status = Status::find($user_id);
+        $status = Status::where('user_id', $user_id)->first();
 
         if ($status->icon_name !== 'default_icon.png') {
             Storage::disk('public')->delete('icons/' . $status->icon_name);
