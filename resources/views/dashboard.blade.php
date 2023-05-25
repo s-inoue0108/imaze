@@ -16,8 +16,8 @@
     <x-headline>おしらせ</x-headline>
         
     <div class="pt-6 px-6 flex justify-center">
-        <div class="artboard artboard-horizontal phone-2 bg-orange-400 rounded-3xl">
-            <p class="text-gray-700"><span class="font-bold">不具合のお詫び：</span>
+        <div class="bg-orange-400 rounded-3xl">
+            <p class="text-gray-700 p-2"><span class="font-bold">不具合のお詫び：</span>
             ランキングに関する不具合があったため，2023-05-25 11:20ごろ以前のステータスパラメータをリセットしました．すみません．反省してまーす</p>
         </div>
     </div>
