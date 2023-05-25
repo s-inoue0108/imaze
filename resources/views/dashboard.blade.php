@@ -12,6 +12,15 @@
         <div class="fixed z-20 bottom-4 right-4 top-btn">
             <a href="#"><button class="btn btn-circle"><i class="fa-solid fa-chevron-up"></i></button></a>
         </div>
+        
+    <x-headline>おしらせ</x-headline>
+        
+    <div class="pt-6 px-6">
+        <div class="artboard artboard-horizontal phone-2 bg-orange-400 rounded-3xl">
+            <p class="text-gray-700"><span class="font-bold">不具合のお詫び：</span>
+            ランキングに関する不具合があったため，2023-05-25 11:20ごろ以前のステータスパラメータをリセットしました．すみません．反省してまーす</p>
+        </div>
+    </div>
 
     <x-headline>ユーザーステータス</x-headline>
 
