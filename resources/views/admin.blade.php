@@ -91,6 +91,7 @@
                                 
                                 <div class="answer-section">
                                     <div class="flex justify-center items-center px-8">
+                                        <label for="hint-modal-{{ $quiz->id }}" class="btn btn-circle btn-accent text-white mr-4"><i class="fa-solid fa-lg fa-lightbulb"></i></label>
                                         <label for="quiz-modal-{{ $quiz->id }}" class="btn btn-primary w-full max-w-xs">解説を見る</label>
                                         <label for="delete-confirm-modal-{{ $quiz->id }}" class="btn btn-circle btn-error text-white ml-4"><i class="fa-solid fa-lg fa-trash-can"></i></label>
                                     </div>
