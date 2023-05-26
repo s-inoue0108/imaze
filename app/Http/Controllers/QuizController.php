@@ -115,8 +115,8 @@ class QuizController extends Controller
         $quiz->save();
 
         // Status number_of_postsを+1する
-        $status = Status::find($user_id);
-        $status->number_of_posts = $status->value('number_of_posts') + 1;
+        $status = Status::where('user_id', $user_id)->first();
+        $status->number_of_posts += 1;
         $status->save();
 
         return redirect()->route('quiz.index'); //
@@ -270,7 +270,7 @@ class QuizController extends Controller
         $deadline = Quiz::find($quiz_id)->deadline;
 
         // このクイズに正答者がいるか（真偽値）
-        $cor_user_exists = Correct::where('quiz_id', $quiz_id)->exists();
+        $cor_user_exists = Correct::withTrashed()->where('quiz_id', $quiz_id)->exists();
 
         // リクエストしたユーザはこのクイズを正答しているか（真偽値）
         $cor_ans_exists = Correct::where('quiz_id', $quiz_id)->where('user_id', $user_id)->exists();
@@ -291,18 +291,18 @@ class QuizController extends Controller
             $correct->save();
 
             // 正解したユーザのStatus
-            $status = Status::find($user_id);
+            $status = Status::where('user_id', $user_id)->first();
 
             // もし先の正答者が存在していなかったら，Status number_of_topを+1する
             if ($cor_user_exists === false) {
-                $status->number_of_top = $status->value('number_of_top') + 1;
+                $status->number_of_top += 1;
 
                 $message = "あなたが最初の正解者です！";
             }
 
             // もし先の正答のレコードが存在していなかったら，Status number_of_correctsを+1する
             if ($cor_ans_exists === false) {
-                $status->number_of_corrects = $status->value('number_of_corrects') + 1;
+                $status->number_of_corrects += 1;
             }
 
             // Statusesテーブルに登録

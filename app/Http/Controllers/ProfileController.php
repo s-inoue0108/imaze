@@ -61,12 +61,12 @@ class ProfileController extends Controller
             Storage::disk('public')->delete('icons/' . $status->icon_name);
         }
         
-        $status->delete();
+        $status->forceDelete();
 
         // Bookmarksテーブルから該当の行を削除
         $bookmark = Bookmark::where('user_id', $user_id)->get();
         if ($bookmark->count() !== 0) {
-            $bookmark->each->delete();
+            $bookmark->each->forceDelete();
         }
 
         // Correctsテーブルから該当の行を削除
@@ -85,7 +85,7 @@ class ProfileController extends Controller
 
         Auth::logout();
 
-        $user->delete();
+        $user->forceDelete();
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();
