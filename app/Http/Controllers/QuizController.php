@@ -115,7 +115,7 @@ class QuizController extends Controller
         $quiz->save();
 
         // Status number_of_postsを+1する
-        $status = Status::where('user_id', $user_id)->first();
+        $status = Status::where('user_id', $user_id)->latest()->first();
         $status->number_of_posts = $status->value('number_of_posts') + 1;
         $status->save();
 
@@ -291,7 +291,7 @@ class QuizController extends Controller
             $correct->save();
 
             // 正解したユーザのStatus
-            $status = Status::where('user_id', $user_id)->first();
+            $status = Status::where('user_id', $user_id)->latest()->first();
 
             // もし先の正答者が存在していなかったら，Status number_of_topを+1する
             if ($cor_user_exists === false) {

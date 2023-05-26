@@ -13,6 +13,36 @@
             <a href="#"><button class="btn btn-circle"><i class="fa-solid fa-chevron-up"></i></button></a>
         </div>
 
+        <x-headline>おしらせ投稿フォーム</x-headline>
+
+        <form method="POST" action="{{ route('admin.notice') }}">
+            @csrf
+            <div class="flex flex-col gap-2 px-6 my-6">
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text text-black font-semibold">おしらせ(1)</span>
+                    </label>
+                    <input type="text" name="notice_1_title" class="input input-bordered input-primary" value="{{ $notice->notice_1_title??'' }}"/>
+                    <textarea rows="5" name="notice_1" class="textarea textarea-bordered textarea-primary mt-2">{{ $notice->notice_1??'' }}</textarea>
+                </div>
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text text-black font-semibold">おしらせ(2)</span>
+                    </label>
+                    <input type="text" name="notice_2_title" class="input input-bordered input-primary" value="{{ $notice->notice_2_title??'' }}"/>
+                    <textarea rows="5" name="notice_2" class="textarea textarea-bordered textarea-primary mt-2">{{ $notice->notice_2??'' }}</textarea>
+                </div>
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text text-black font-semibold">おしらせ(3)</span>
+                    </label>
+                    <input type="text" name="notice_3_title" class="input input-bordered input-primary" value="{{ $notice->notice_3_title??'' }}"/>
+                    <textarea rows="5" name="notice_3" class="textarea textarea-bordered textarea-primary mt-2">{{ $notice->notice_3??'' }}</textarea>
+                </div>
+                <button class="btn btn-primary mt-4">おしらせを更新</button>
+            </div>
+        </form>
+
         <x-headline>アプリステータス</x-headline>
 
         <div class="flex justify-center my-8">

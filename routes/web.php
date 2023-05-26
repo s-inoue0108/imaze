@@ -51,6 +51,9 @@ Route::middleware(['auth', 'verified'])->group(function() {
 // Admin Page
 Route::get('/admin', [StatusController::class, 'admin'])->middleware(['auth', 'verified', 'admin'])->name('admin');
 
+// Notice
+Route::post('/admin/notice', [StatusController::class, 'notice'])->middleware(['auth', 'verified', 'admin'])->name('admin.notice');
+
 
 /* !!! Resource Pages !!! */
 

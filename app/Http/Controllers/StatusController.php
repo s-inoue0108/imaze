@@ -7,6 +7,7 @@ use App\Models\Quiz;
 use App\Models\Status;
 use App\Models\Correct;
 use App\Models\Bookmark;
+use App\Models\Notice;
 use Illuminate\Http\Request;
 
 // Carbon
@@ -22,8 +23,11 @@ class StatusController extends Controller
 {
     public function dashboard()
     {
-        return view('dashboard');
-    }//
+        // 最新のおしらせを取得
+        $notice = Notice::latest()->first();
+
+        return view('dashboard', compact('notice'));
+    } //
 
     public function icon(Request $request, $icon_id)
     {
@@ -128,8 +132,43 @@ class StatusController extends Controller
         $all_bookmarks = Bookmark::count();
 
         // すべての投稿を取得
-        $quizzes = Quiz::with(['user.status', 'corrects', 'bookmarks'])->latest()->paginate(30);
+        $quizzes = Quiz::with(['user.status', 'corrects', 'bookmarks'])->latest()->paginate(12);
 
-        return view('admin', compact('now', 'all_users', 'all_posts', 'all_corrects', 'all_bookmarks', 'quizzes'));
+        // 最新のおしらせを取得
+        $notice = Notice::latest()->first();
+
+        return view('admin', compact('now', 'all_users', 'all_posts', 'all_corrects', 'all_bookmarks', 'quizzes', 'notice'));
+    }
+
+    public function notice(Request $request)
+    {
+        // Carbonインスタンス（現在時刻）
+        $now = new Carbon();
+
+        // バリデーション配列を作成
+        $validated = $request->validate([
+            'notice_1' => 'max:200',
+            'notice_1_title' => 'max:20',
+            'notice_2' => 'max:200',
+            'notice_2_title' => 'max:20',
+            'notice_3' => 'max:200',
+            'notice_3_title' => 'max:20',
+        ]);
+
+        // Noticeインスタンス
+        $notice = new Notice();
+
+        // Noticesテーブルへ保存
+        $notice->notice_1 = $validated['notice_1'];
+        $notice->notice_1_title = $validated['notice_1_title'];
+        $notice->notice_2 = $validated['notice_2'];
+        $notice->notice_2_title = $validated['notice_2_title'];
+        $notice->notice_3 = $validated['notice_3'];
+        $notice->notice_3_title = $validated['notice_3_title'];
+
+        $notice->save();
+
+        return redirect()->route('dashboard');
+
     }
 }

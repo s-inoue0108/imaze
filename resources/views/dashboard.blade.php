@@ -16,13 +16,28 @@
     <x-headline>管理者からのおしらせ</x-headline>
         
     <div class="pt-6 px-6 flex justify-center">
-        <div class="bg-yellow-400 rounded-3xl">
-            <p class="text-sm text-gray-700 p-3"><span class="font-bold">不具合のお詫び：</span>
-                ランキングに関する不具合があったため，2023-05-25 11:20ごろ以前のステータスパラメータをリセットしました．すみません．反省してまーす．
-            </p>
-            <p class="text-sm text-gray-700 p-3"><span class="font-bold">新機能追加のおしらせ：</span>
-                投稿フォームにて，クイズの「ヒント」を設定できる機能を追加しました．まだ正解していないクイズではヒントを参照できるようになりました．
-            </p>
+        <div class="w-full h-auto bg-yellow-400 rounded-3xl p-4">
+            <div class="flex flex-col gap-2">
+                <p class="text-black font-bold">{{ $notice->notice_1_title??'おしらせ(1)' }}</p>
+                <p class="text-sm text-gray-700">{{ $notice->notice_1??'新規のおしらせはありません' }}</p>
+            </div>
+
+            <div class="border-2 border-yellow-100 rounded my-4"></div>
+
+            <div class="flex flex-col gap-2">
+                <p class="text-black font-bold">{{ $notice->notice_2_title??'おしらせ(2)' }}</p>
+                <p class="text-sm text-gray-700">{{ $notice->notice_2??'新規のおしらせはありません' }}</p>
+            </div>
+
+            <div class="border-2 border-yellow-100 rounded my-4"></div>
+
+            <div class="flex flex-col gap-2">
+                <p class="text-black font-bold">{{ $notice->notice_2_title??'おしらせ(3)' }}</p>
+                <p class="text-sm text-gray-700">{{ $notice->notice_2??'新規のおしらせはありません' }}</p>
+            </div>
+            @if ($notice->notice_1 !== null || $notice->notice_2 !== null || $notice->notice_3 !== null)
+                <p class="text-right text-xs text-gray-600 mt-4"><i class="fa-solid fa-clock-rotate-left mr-1"></i>{{ $notice->created_at }}</p>
+            @endif
         </div>
     </div>
 
