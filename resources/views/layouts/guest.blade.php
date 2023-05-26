@@ -36,8 +36,8 @@
             <div>
                 <a href="/">
                     <div class="flex justify-center items-center">
-                        <x-application-logo width="100" class="fill-current h-16 lg:h-auto" />
-                        <x-application-title-logo width="100" class="fill-current h-16 lg:h-auto" />
+                        <x-application-logo width="30" class="fill-current h-auto" />
+                        <x-application-title-logo width="50" class="fill-current h-auto" />
                     </div>
                 </a>
             </div>
