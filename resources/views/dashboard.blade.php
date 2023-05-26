@@ -37,6 +37,8 @@
             </div>
             @if ($notice->notice_1 !== null || $notice->notice_2 !== null || $notice->notice_3 !== null)
                 <p class="text-right text-xs text-gray-600 mt-4"><i class="fa-solid fa-clock-rotate-left mr-1"></i>{{ $notice->created_at }}</p>
+            @else
+                <span></span>
             @endif
         </div>
     </div>
