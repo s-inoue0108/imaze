@@ -32,8 +32,8 @@
             <div class="border-2 border-yellow-100 rounded my-4"></div>
 
             <div class="flex flex-col gap-2">
-                <p class="text-black font-bold">{{ $notice->notice_2_title??'おしらせ(3)' }}</p>
-                <p class="text-sm text-gray-700">{{ $notice->notice_2??'新規のおしらせはありません' }}</p>
+                <p class="text-black font-bold">{{ $notice->notice_3_title??'おしらせ(3)' }}</p>
+                <p class="text-sm text-gray-700">{{ $notice->notice_3??'新規のおしらせはありません' }}</p>
             </div>
             @if ($notice === null)
                 <span></span>
