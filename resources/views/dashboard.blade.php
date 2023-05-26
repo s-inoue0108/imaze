@@ -35,7 +35,9 @@
                 <p class="text-black font-bold">{{ $notice->notice_2_title??'おしらせ(3)' }}</p>
                 <p class="text-sm text-gray-700">{{ $notice->notice_2??'新規のおしらせはありません' }}</p>
             </div>
-            @if ($notice->notice_1 !== null || $notice->notice_2 !== null || $notice->notice_3 !== null)
+            @if ($notice === null)
+                <span></span>
+            @elseif ($notice->notice_1 !== null || $notice->notice_2 !== null || $notice->notice_3 !== null)
                 <p class="text-right text-xs text-gray-600 mt-4"><i class="fa-solid fa-clock-rotate-left mr-1"></i>{{ $notice->created_at }}</p>
             @else
                 <span></span>
