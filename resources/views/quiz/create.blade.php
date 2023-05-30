@@ -112,7 +112,7 @@
                             <label class="label">
                                 <span class="label-text text-gray-600 font-bold" id="title">タイトル</span>
                              </label>
-                            <input type="text" name="title" placeholder="TITLE" class="input input-bordered input-primary w-full max-w-xs" />
+                            <input type="text" name="title" placeholder="TITLE" class="input input-bordered input-primary w-full max-w-xs" value="{{ old('title') }}" />
                             <div class="flex flex-col items-center gap-2 mt-2 text-xs text-red-400 font-bold">
                                 @if ($errors->has('title'))
                                     @foreach ($errors->get('title') as $error)
@@ -132,7 +132,7 @@
                             <label class="label">
                                 <span class="label-text text-gray-600 font-bold" id="answer">解答</span>
                             </label>
-                            <input type="text" name="answer" placeholder="ANSWER" class="input input-bordered input-primary w-full max-w-xs" />
+                            <input type="text" name="answer" placeholder="ANSWER" class="input input-bordered input-primary w-full max-w-xs" value="{{ old('answer') }}" />
                             <div class="flex flex-col items-center gap-2 mt-2 text-xs text-red-400 font-bold">
                                 @if ($errors->has('answer'))
                                     @foreach ($errors->get('answer') as $error)
@@ -152,7 +152,7 @@
                             <label class="label">
                                 <span class="label-text text-gray-600 font-bold" id="explanation">解説（任意）</span>
                             </label>
-                            <textarea rows="5" name="explanation" class="textarea textarea-primary w-full max-w-xs" placeholder="EXPLANATION"></textarea>
+                            <textarea rows="5" name="explanation" class="textarea textarea-primary w-full max-w-xs" placeholder="EXPLANATION">{{ old('explanation') }}</textarea>
                             <div class="flex flex-col items-center gap-2 mt-2 text-xs text-red-400 font-bold">
                                 @if ($errors->has('explanation'))
                                     @foreach ($errors->get('explanation') as $error)
@@ -172,7 +172,7 @@
                             <label class="label">
                                 <span class="label-text text-gray-600 font-bold" id="hint">ヒント（任意）</span>
                             </label>
-                            <textarea rows="3" name="hint" class="textarea textarea-primary w-full max-w-xs" placeholder="HINT"></textarea>
+                            <textarea rows="3" name="hint" class="textarea textarea-primary w-full max-w-xs" placeholder="HINT">{{ old('hint') }}</textarea>
                             <div class="flex flex-col items-center gap-2 mt-2 text-xs text-red-400 font-bold">
                                 @if ($errors->has('explanation'))
                                     @foreach ($errors->get('hint') as $error)
