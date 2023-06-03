@@ -171,4 +171,16 @@ class StatusController extends Controller
         return redirect()->route('dashboard');
 
     }
+
+    public function post_notice(Request $request)
+    {
+        // Status post_noticeを更新
+        $status = Status::where('user_id', Auth::id());
+
+        $status->update([
+            'post_notice' => $request->post_notice,
+        ]);
+
+        return redirect()->route('profile.edit');
+    }
 }

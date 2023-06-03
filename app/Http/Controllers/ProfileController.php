@@ -21,8 +21,11 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
+        $post_notice_status = Status::where('user_id', Auth::id())->first()->post_notice;
+
         return view('profile.edit', [
             'user' => $request->user(),
+            'post_notice_status' => $post_notice_status,
         ]);
     }
 

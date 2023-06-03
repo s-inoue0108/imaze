@@ -12,11 +12,17 @@ use Illuminate\Http\Request;
 // Carbon
 use Carbon\Carbon;
 
+// Mail/NoticeMail
+use App\Mail\NoticeMail;
+
 // Authファサード
 use Illuminate\Support\Facades\Auth;
 
 // Storageファサード
 use Illuminate\Support\Facades\Storage;
+
+// Mailファサード
+use Illuminate\Support\Facades\Mail;
 
 // Httpファサード
 use Illuminate\Support\Facades\Http;
@@ -118,6 +124,13 @@ class QuizController extends Controller
         $status = Status::where('user_id', $user_id)->first();
         $status->number_of_posts += 1;
         $status->save();
+
+        // 通知メールを送信
+        $mails = User::with('status')->whereHas('status', function($query) {
+            $query->where('post_notice', 'ON');
+        })->get(['email']);
+
+        Mail::to($mails)->send(new NoticeMail);
 
         return redirect()->route('quiz.index'); //
     }

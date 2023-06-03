@@ -56,6 +56,7 @@ class RegisteredUserController extends Controller
         $status->number_of_posts = 0;
         $status->number_of_corrects = 0;
         $status->number_of_top = 0;
+        $status->post_notice = 'OFF';
 
         $status->save();
 
